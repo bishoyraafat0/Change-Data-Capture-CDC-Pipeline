@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+  <!-- ربط Hive Metastore بقاعدة PostgreSQL جوّه الدوكر -->
+  <property>
+    <name>javax.jdo.option.ConnectionURL</name>
+    <value>jdbc:postgresql://hive-metastore-postgresql:5432/metastore</value>
+    <description>PostgreSQL connection string for Hive Metastore</description>
+  </property>
+
+  <property>
+    <name>javax.jdo.option.ConnectionDriverName</name>
+    <value>org.postgresql.Driver</value>
+  </property>
+
+  <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>hive</value>
+  </property>
+
+  <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>hive</value>
+  </property>
+
+  <!-- نخلي Hive يكوّن ال-schema في قاعدة البيانات ويوقف التحقق الصارم -->
+  <property>
+    <name>datanucleus.autoCreateSchema</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>datanucleus.fixedDatastore</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>datanucleus.schema.autoCreateAll</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>hive.metastore.schema.verification</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hive.metastore.schema.verification.record.version</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>datanucleus.autoCreateColumns</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>datanucleus.autoCreateTables</name>
+    <value>true</value>
+  </property>
+
+  <!-- عنوان Thrift بتاع Hive Metastore -->
+  <property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://hive-metastore:9083</value>
+  </property>
+
+</configuration>

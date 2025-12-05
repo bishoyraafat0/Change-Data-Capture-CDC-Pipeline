@@ -1,0 +1,27 @@
+{
+  "name": "sqlserver-cdc-fresh",
+  "config": {
+    "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+    "database.hostname": "host.docker.internal",
+    "database.port": "1433",
+    "database.user": "debezium",
+    "database.password": "DebeziumPass123!",
+    "database.dbname": "FP-DWH",
+    "database.names": "FP-DWH",
+    "database.server.name": "sqlsrv-fresh",
+    "table.include.list": "dbo.dim_customer,dbo.dim_date,dbo.dim_product,dbo.dim_supplier,dbo.fact_sales",
+    "database.history.kafka.bootstrap.servers": "kafka:9092",
+    "database.history.kafka.topic": "schema-changes.sqlsrv-fresh",
+    "snapshot.mode": "initial",
+    "decimal.handling.mode": "double",
+    "heartbeat.interval.ms": "10000",
+    "topic.prefix": "sqlsrv-fresh",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "true",
+    "value.converter.schemas.enable": "true",
+    "database.trustServerCertificate": "true",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+    "schema.history.internal.kafka.topic": "schema-changes.sqlsrv-fresh"
+  }
+}
