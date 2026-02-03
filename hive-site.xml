@@ -3,7 +3,6 @@
 
 <configuration>
 
-
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
     <value>jdbc:postgresql://hive-metastore-postgresql:5432/metastore</value>
