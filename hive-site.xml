@@ -3,7 +3,7 @@
 
 <configuration>
 
-  <!-- ربط Hive Metastore بقاعدة PostgreSQL جوّه الدوكر -->
+
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
     <value>jdbc:postgresql://hive-metastore-postgresql:5432/metastore</value>
@@ -25,7 +25,7 @@
     <value>hive</value>
   </property>
 
-  <!-- نخلي Hive يكوّن ال-schema في قاعدة البيانات ويوقف التحقق الصارم -->
+  
   <property>
     <name>datanucleus.autoCreateSchema</name>
     <value>true</value>
@@ -61,7 +61,7 @@
     <value>true</value>
   </property>
 
-  <!-- عنوان Thrift بتاع Hive Metastore -->
+  
   <property>
     <name>hive.metastore.uris</name>
     <value>thrift://hive-metastore:9083</value>
